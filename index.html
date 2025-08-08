@@ -20,7 +20,6 @@
       font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
 
-    /* Page reset */
     *{box-sizing:border-box;margin:0;padding:0}
     html,body{height:100%}
     body{
@@ -36,7 +35,6 @@
       background-attachment:fixed;
     }
 
-    /* subtle noise texture using SVG data URI */
     body::before{
       content:"";
       position:fixed; inset:0; z-index:0;
@@ -47,12 +45,7 @@
     .container{max-width:var(--container);margin:0 auto;padding:28px}
     header.site-header{position:sticky;top:0;z-index:40;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);backdrop-filter: blur(6px);border-bottom:1px solid rgba(255,255,255,0.03)}
     .header-grid{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:16px;padding:12px 0}
-    .profile-pic{
-      width:64px;height:64px;border-radius:14px;object-fit:cover;
-      box-shadow: 0 6px 18px rgba(2,6,23,0.8), 0 1px 0 rgba(255,255,255,0.02) inset;
-      border: 2px solid rgba(255,255,255,0.04);
-    }
+    .brand{display:flex;align-items:center;gap:12px;padding:12px 0}
     .brand h1{font-size:1.05rem;margin-bottom:2px}
     .subtitle{color:var(--muted);font-size:0.85rem;margin-top:2px}
 
@@ -63,7 +56,6 @@
 
     main{position:relative;z-index:10}
 
-    /* HERO */
     .hero{
       display:grid;
       grid-template-columns: minmax(220px, var(--profile-size)) 1fr;
@@ -74,7 +66,6 @@
       overflow:visible;
     }
 
-    /* left: big profile */
     .hero-portrait{
       position:relative;
       display:flex;
@@ -90,13 +81,10 @@
       box-shadow: 0 20px 60px rgba(2,6,23,0.85);
       display:grid;
       place-items:center;
-      transform: translateZ(0);
       position:relative;
       overflow:hidden;
       border:1px solid rgba(255,255,255,0.03);
     }
-
-    /* Foreground profile image large + slight tilt */
     .portrait-wrap img{
       width:96%; height:96%; object-fit:cover; border-radius:14px;
       transform: rotate(-2deg) scale(1.02);
@@ -106,17 +94,13 @@
       box-shadow: 0 8px 28px rgba(2,6,23,0.7);
     }
     .portrait-wrap:hover img{ transform: rotate(-1deg) scale(1.04); }
-
-    /* Data overlay: network nodes */
     .portrait-wrap::after{
       content:"";
       position:absolute; inset:0;
       background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600"><g fill="none" stroke="rgba(110,231,183,0.9)" stroke-width="1" opacity="0.08"><path d="M40 520 L160 460 L280 520 L420 430 L540 500"/><path d="M60 80 L180 130 L300 60 L420 140 L540 100"/></g></svg>');
       mix-blend-mode: screen; pointer-events:none; opacity:0.9;
-      transform: translateY(-4px);
     }
 
-    /* right: text */
     .hero-text h2{font-size: clamp(1.25rem, 3.2vw, 2.2rem); margin-bottom:8px}
     .hero-text p{color:var(--muted);margin-bottom:12px}
     .hero-links{display:flex;gap:10px;margin-top:12px}
@@ -124,32 +108,26 @@
     .solid{background: linear-gradient(90deg,#054d3a,#077a56);color:white;padding:8px 12px;border-radius:8px;text-decoration:none}
     .outline:hover, .solid:hover{opacity:0.95}
 
-    /* Sections */
     section{margin:28px 0;padding:26px;border-radius:14px;background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00)); border:1px solid rgba(255,255,255,0.03); box-shadow: 0 8px 26px rgba(2,6,23,0.6)}
     h3{margin-bottom:12px;color:#eaf6ef}
     .about p{color:var(--muted)}
 
-    /* Projects */
     .project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
     .project-card{padding:16px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.008));border:1px solid rgba(255,255,255,0.02)}
     .project-card h4{margin-bottom:6px}
     .project-card .meta{color:var(--muted);font-size:0.88rem;margin-top:8px}
 
-    /* Skills */
     .skill-list{display:flex;flex-wrap:wrap;gap:8px;list-style:none}
     .skill-list li{background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:8px 12px;border-radius:999px;color:var(--muted);font-weight:600;font-size:0.92rem}
 
-    /* Contact form */
     .contact-form{display:grid;gap:10px;max-width:640px}
     .contact-form label{display:block;color:var(--muted);font-size:0.95rem}
     .contact-form input,.contact-form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:rgba(255,255,255,0.02);color:#e6eef6}
     .contact-form .btn{justify-self:start}
 
-    /* Footer */
     .site-footer{margin-top:24px;padding:18px 0;color:var(--muted);font-size:0.95rem;display:flex;justify-content:space-between;align-items:center}
     .socials a{color:var(--muted);margin-left:10px;text-decoration:none}
 
-    /* floating decorative shapes (not flat) */
     .decor-node{
       position:absolute; z-index:0; pointer-events:none; mix-blend-mode:screen;
       filter: blur(26px); opacity:0.12;
@@ -157,34 +135,29 @@
     .node-a{width:380px;height:380px;right:-80px;top:40px;background:radial-gradient(circle at 30% 30%, rgba(110,231,183,0.9), rgba(110,231,183,0.2) 30%, transparent 60%);border-radius:40%}
     .node-b{width:300px;height:260px;left:-80px;bottom:-40px;background:linear-gradient(135deg, rgba(36,120,190,0.15), rgba(80,40,130,0.12));border-radius:32%}
 
-    /* small animations for data dots */
     .data-dots{position:absolute; left:50%; transform:translateX(-50%); bottom:14px; z-index:12; display:flex;gap:8px}
     .dot{width:8px;height:8px;border-radius:999px;background:var(--accent);opacity:0.9; animation:updown 2.2s ease-in-out infinite}
     .dot:nth-child(2){animation-delay:0.2s}
     .dot:nth-child(3){animation-delay:0.4s}
     @keyframes updown{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)}}
 
-    /* responsive */
     @media (max-width:880px){
       .hero{grid-template-columns:1fr; text-align:center}
       .portrait-wrap{margin:0 auto}
       nav.nav{display:none}
       header.site-header{padding:8px 12px}
-      .profile-pic{width:48px;height:48px}
     }
   </style>
 </head>
 <body>
   <header class="site-header" role="banner">
     <div class="container header-grid">
-      <div class="brand" aria-hidden="false">
-        <img src="photo.jpg" alt="Vineeth K — profile photo" class="profile-pic">
+      <div class="brand">
         <div>
           <h1>Vineeth K</h1>
           <p class="subtitle">Aspiring Data Scientist • BTech</p>
         </div>
       </div>
-
       <nav class="nav" role="navigation" aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
@@ -195,15 +168,13 @@
     </div>
   </header>
 
-  <!-- decorative nodes -->
-  <div class="decor-node node-a" aria-hidden="true"></div>
-  <div class="decor-node node-b" aria-hidden="true"></div>
+  <div class="decor-node node-a"></div>
+  <div class="decor-node node-b"></div>
 
   <main>
-    <section id="hero" class="hero container" aria-label="Introduction">
-      <div class="hero-portrait" aria-hidden="false">
-        <div class="portrait-wrap" title="Vineeth K — Data Scientist (click to view larger)">
-          <!-- KEEP a high-res photo.jpg in same folder. the image is intentionally large so recruiters immediately see your face. -->
+    <section id="hero" class="hero container">
+      <div class="hero-portrait">
+        <div class="portrait-wrap">
           <img src="photo.jpg" alt="Headshot of Vineeth K">
         </div>
       </div>
@@ -213,46 +184,45 @@
         <p>I build data projects that turn messy data into clear decisions. I enjoy machine learning, data analysis, and making insights easy to act on.</p>
         <p>Open to entry-level Data Scientist / Data Analyst roles. Based in Thrissur, Kerala, India.</p>
 
-        <div class="hero-links" role="navigation" aria-label="Quick links">
+        <div class="hero-links">
           <a class="outline" href="https://github.com/VineethKcoder" target="_blank" rel="noopener">GitHub</a>
           <a class="outline" href="https://www.linkedin.com/in/vineeth-k-911234329" target="_blank" rel="noopener">LinkedIn</a>
           <a class="solid" href="resume.pdf" download>Download Resume</a>
         </div>
       </div>
 
-      <!-- small animated data dots under hero to hint "data" -->
-      <div class="data-dots" aria-hidden="true">
+      <div class="data-dots">
         <span class="dot"></span>
         <span class="dot"></span>
         <span class="dot"></span>
       </div>
     </section>
 
-    <section id="about" class="container about" aria-labelledby="about-heading">
-      <h3 id="about-heading">About me</h3>
+    <section id="about" class="container about">
+      <h3>About me</h3>
       <p>I recently completed my BTech. I study data science and build projects to learn and demonstrate skills in machine learning, computer vision, and analytics. I enjoy turning complex datasets into clear visuals and actionable models.</p>
     </section>
 
-    <section id="projects" class="container projects" aria-labelledby="projects-heading">
-      <h3 id="projects-heading">Projects</h3>
+    <section id="projects" class="container projects">
+      <h3>Projects</h3>
       <div class="project-grid">
-        <article class="project-card" aria-labelledby="proj1">
-          <h4 id="proj1">Ball Tracking System</h4>
+        <article class="project-card">
+          <h4>Ball Tracking System</h4>
           <p>Used computer vision techniques to track balls in sports (cricket) — YOLOv8 for detection, custom tracking logic, results visualized and exposed via Flask dashboard.</p>
-          <p class="meta">yolov8, OpenCV, Flask • <a href="https://github.com/navwil/navwil-cricket-ball-tracking-using-yolo-v8-mini-DRS-system" target="_blank" rel="noopener">Code</a></p>
+          <p class="meta">yolov8, OpenCV, Flask • <a href="https://github.com/navwil/navwil-cricket-ball-tracking-using-yolo-v8-mini-DRS-system" target="_blank">Code</a></p>
         </article>
 
-        <article class="project-card" aria-labelledby="proj2">
-          <h4 id="proj2">Sign Language Recognition & Translation</h4>
+        <article class="project-card">
+          <h4>Sign Language Recognition & Translation</h4>
           <p>Built a smart glove system that translates hand gestures into text and speech — pipeline includes sensor data preprocessing, feature extraction, and model inference.</p>
-          <p class="meta">scikit-learn, Flask • <a href="https://github.com/VineethKcoder" target="_blank" rel="noopener">Code</a></p>
+          <p class="meta">scikit-learn, Flask • <a href="https://github.com/VineethKcoder" target="_blank">Code</a></p>
         </article>
       </div>
     </section>
 
-    <section id="skills" class="container skills" aria-labelledby="skills-heading">
-      <h3 id="skills-heading">Skills</h3>
-      <ul class="skill-list" aria-hidden="false">
+    <section id="skills" class="container skills">
+      <h3>Skills</h3>
+      <ul class="skill-list">
         <li>Python (pandas, numpy)</li>
         <li>SQL</li>
         <li>C++ / C</li>
@@ -264,11 +234,11 @@
       </ul>
     </section>
 
-    <section id="contact" class="container contact" aria-labelledby="contact-heading">
-      <h3 id="contact-heading">Contact</h3>
+    <section id="contact" class="container contact">
+      <h3>Contact</h3>
       <p>Email me at <a href="mailto:vineethk1220@gmail.com">vineethk1220@gmail.com</a> or WhatsApp: <a href="tel:+919544453559">+91 9544453559</a></p>
 
-      <form class="contact-form" action="mailto:vineethk1220@gmail.com" method="post" enctype="text/plain" aria-label="Contact form">
+      <form class="contact-form" action="mailto:vineethk1220@gmail.com" method="post" enctype="text/plain">
         <label>Name
           <input name="name" placeholder="Your name" required>
         </label>
@@ -283,31 +253,14 @@
     </section>
   </main>
 
-  <footer class="site-footer" role="contentinfo">
+  <footer class="site-footer">
     <div class="container footer-grid">
       <div>© 2025 Vineeth K • Built with ❤️</div>
       <div class="socials">
-        <a href="https://github.com/VineethKcoder" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/vineeth-k-911234329" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/VineethKcoder" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/vineeth-k-911234329" target="_blank">LinkedIn</a>
       </div>
     </div>
   </footer>
-
-  <script>
-    // Minor enhancement: if profile image fails (wrong file), show a friendly fallback style
-    document.addEventListener('DOMContentLoaded', () => {
-      const img = document.querySelector('.portrait-wrap img');
-      img.addEventListener('error', () => {
-        img.style.display = 'none';
-        const wrap = document.querySelector('.portrait-wrap');
-        wrap.innerHTML = '<div style="padding:28px;color:var(--muted);text-align:center">Profile image missing<br>Place a high-res file named <strong>photo.jpg</strong> in the site folder</div>';
-      });
-
-      // Make hero image clickable to open in new tab for quick inspection
-      img.addEventListener('click', () => {
-        window.open(img.src, '_blank');
-      });
-    });
-  </script>
 </body>
 </html>
